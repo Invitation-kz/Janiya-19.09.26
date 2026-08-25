@@ -519,13 +519,13 @@ form.addEventListener("submit", async (ev) => {
 
   // Деректерді серверге жіберу
   fetch(URL_APP, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-    },
-    mode: "no-cors",
-    body: formBody,
-  }).catch((err) => {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(details)
+})
+    .catch((err) => {
     console.error('Error:', err);
     alert("Ошибка!");
   }).finally(() => {
